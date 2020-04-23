@@ -39,8 +39,10 @@
           <h5 class="header col s12 light">{% if lang == "fr" %}L'enseignement et l'accord du piano{% else %}Piano teaching and tuning{% endif%}</h5>
         </div>
         <div class="row center">
-          <a href="{% if lang == "fr" %}https://piano.summerhays.net/index-fr.html{% else %}https://piano.summerhays.net/index.html{% endif%}" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Teaching</a>
-          <a href="{% if lang == "fr" %}https://accord.summerhays.net/index.html{% else %}https://accord.summerhays.net/index-en.html{% endif%}" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Teaching</a>
+          {% if page.lang == "fr" %}{% for each in data.navigation.fr %}{% else %}{% for each in data.navigation.en %}
+          {% unless each.title == "English" or each.title == "Français" %}
+        <a ref="{{ each.link }}" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">{{ each.title }}</a>
+        {% endunless %}{% endfor %}{% endfor %}{% endif %}
         </div>
         <br><br>
 
