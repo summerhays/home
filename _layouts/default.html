@@ -15,9 +15,9 @@
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">Logo</a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="white-text" href="{% if page.lang == "fr" %}https://accord.summerhays.net/index.html{% else %}https://accord.summerhays.net/index-en.html{% endif %}">{% if page.lang == "fr" %}L'accord et la réparation des pianos{% else %}Piano tuning and repair{% endif %}</a></li>
-            <li><a class="white-text" href="{% if page.lang == "fr" %}https://piano.summerhays.net/index-fr.html{% else %}https://piano.summerhays.net/index.html{% endif %}">{% if page.lang == "fr" %}Cours de piano{% else %}Piano lessons for busy adults{% endif %}</a></li></li>
-            <li><a class="white-text" href="{% if page.lang == "fr" %}https://www.summerhays.net/index-en.html{% else %}https://www.summerhays.net/index-fr.html{% endif %}">{% if page.lang == "fr" %}English{% else %}Français{% endif %}</a></li>
+        {% if page.lang == "fr" %}{% for each in data.navigation.fr %}{% else %}{% for each in data.navigation.en %}
+        <li><a class="white-text" href="{{ each.link }}">{{ each.title }}</a></li>
+        {% endfor %}{% endif %}
           </ul>
       </ul>
 
