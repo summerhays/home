@@ -21,8 +21,9 @@
         <div class="col l3 s12">
           <h5 class="white-text">{% if page.lang == "fr" %}Mes services{% else %}My services{% endif %}</h5>
           <ul>
-            <li><a class="white-text" href="{% if page.lang == "fr" %}https://accord.summerhays.net/index.html{% else %}https://accord.summerhays.net/index-en.html{% endif %}">{% if page.lang == "fr" %}L'accord et la réparation des pianos{% else %}Piano tuning and repair{% endif %}</a></li>
-            <li><a class="white-text" href="{% if page.lang == "fr" %}https://piano.summerhays.net/index-fr.html{% else %}https://piano.summerhays.net/index.html{% endif %}">{% if page.lang == "fr" %}Cours de piano{% else %}Piano teaching{% endif %}</a></li></li>
+       {% if page.lang == "fr" %}{% for each in data.navigation.fr %}{% else %}{% for each in data.navigation.en %}
+        <li><a class="white-text" href="{{ each.link }}">{{ each.title }}</a></li>
+        {% endfor %}{% endif %}
           </ul>
         </div>
         <div class="col l3 s12">
