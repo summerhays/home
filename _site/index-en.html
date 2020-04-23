@@ -15,16 +15,12 @@
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">Logo</a>
       <ul class="right hide-on-med-and-down">
-        {% if page.lang == "fr" %}{% for each in data.navigation.fr %}{% else %}{% for each in data.navigation.en %}
-        <li><a class="white-text" href="{{ each.link }}">{{ each.title }}</a></li>
-        {% endfor %}{% endfor %}{% endif %}
+        
           </ul>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-               {% if page.lang == "fr" %}{% for each in data.navigation.fr %}{% else %}{% for each in data.navigation.en %}
-        <li><a class="white-text" href="{{ each.link }}">{{ each.title }}</a></li>
-        {% endfor %}{% endfor %}{% endif %}
+               
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
@@ -34,13 +30,13 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center teal-text text-lighten-2">{% if lang == "fr" %}Piano Summerhays{% else %}Summerhays Piano{% endif%}</h1>
+        <h1 class="header center teal-text text-lighten-2">Summerhays Piano</h1>
         <div class="row center">
-          <h5 class="header col s12 light">{% if lang == "fr" %}L'enseignement et l'accord du piano{% else %}Piano teaching and tuning{% endif%}</h5>
+          <h5 class="header col s12 light">Piano teaching and tuning</h5>
         </div>
         <div class="row center">
-          <a href="{% if lang == "fr" %}https://piano.summerhays.net/index-fr.html{% else %}https://piano.summerhays.net/index.html{% endif%}" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Teaching</a>
-          <a href="{% if lang == "fr" %}https://accord.summerhays.net/index.html{% else %}https://accord.summerhays.net/index-en.html{% endif%}" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Teaching</a>
+          <a href="https://piano.summerhays.net/index.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Teaching</a>
+          <a href="https://accord.summerhays.net/index-en.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Teaching</a>
         </div>
         <br><br>
 
@@ -113,7 +109,50 @@
   </div>
 
 
- {% include footer.html %}
+   <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Passion for music</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About me</h5>
+          <p class="grey-text text-lighten-4">I started learning piano at the age of 17. Since then, I have been trained in piano teaching, especially for students with learning and physical difficulties, at the Verhoog School of Music in Chicago, a kind of learning laboratory. I completed an apprenticeship in piano tuning with Joseph Kahn. I’ve been working with pianos in many capacities for 15 years.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">My services</h5>
+          <ul>
+       
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by SummerhaySites
+      </div>
+    </div>
+  </footer>
+
 
 
   <!--  Scripts-->

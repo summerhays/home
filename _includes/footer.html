@@ -23,7 +23,7 @@
           <ul>
        {% if page.lang == "fr" %}{% for each in data.navigation.fr %}{% else %}{% for each in data.navigation.en %}
         <li><a class="white-text" href="{{ each.link }}">{{ each.title }}</a></li>
-        {% endfor %}{% endif %}
+        {% endfor %}{% endfor %}{% endif %}
           </ul>
         </div>
         <div class="col l3 s12">
