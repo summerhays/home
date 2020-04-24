@@ -9,22 +9,26 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/assets/css/w3.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/assets/css/all.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Logo</a>
+	    <a id="logo-container" href="#" class="brand-logo">{% if page.lang == "fr" %}Piano Summerhays{% else %}Summerhays Piano{% endif%}</a>
       <ul class="right hide-on-med-and-down">
-        {% if page.lang == "fr" %}{% for each in data.navigation.fr %}{% else %}{% for each in data.navigation.en %}
-        <li><a class="white-text" href="{{ each.link }}">{{ each.title }}</a></li>
-        {% endfor %}{% endfor %}{% endif %}
+	      {% if page.lang == "fr" %}{% assign doclist = site.data.navigation.fr %}{% else %}{% assign doclist = site.data.navigation.en %}{% endif %}
+	{% for each in doclist %}
+        <li><a href="{{ each.link }}">{{ each.title }}</a></li>
+        {% endfor %}
           </ul>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-               {% if page.lang == "fr" %}{% for each in data.navigation.fr %}{% else %}{% for each in data.navigation.en %}
+	      {% if page.lang == "fr" %}{% assign doclist = site.data.navigation.fr %}{% else %}{% assign doclist = site.data.navigation.en %}{% endif %}
+        {% for each in doclist %}
         <li><a class="white-text" href="{{ each.link }}">{{ each.title }}</a></li>
-        {% endfor %}{% endfor %}{% endif %}
+        {% endfor %}
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
@@ -36,19 +40,20 @@
         <br><br>
         <h1 class="header center teal-text text-lighten-2">{% if lang == "fr" %}Piano Summerhays{% else %}Summerhays Piano{% endif%}</h1>
         <div class="row center">
-          <h5 class="header col s12 light">{% if lang == "fr" %}L'enseignement et l'accord du piano{% else %}Piano teaching and tuning{% endif%}</h5>
+          <h5 class="header col s12 brown-text light">{% if lang == "fr" %}L'enseignement et l'accord du piano{% else %}Piano teaching and tuning{% endif%}</h5>
         </div>
         <div class="row center">
-          {% if page.lang == "fr" %}{% for each in data.navigation.fr %}{% else %}{% for each in data.navigation.en %}
+          {% if page.lang == "fr" %}{% assign doclist = site.data.navigation.fr %}{% else %}{% assign doclist = site.data.navigation.en %}{% endif %}
+	{% for each in doclist %}
           {% unless each.title == "English" or each.title == "Français" %}
-        <a ref="{{ each.link }}" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">{{ each.title }}</a>
-        {% endunless %}{% endfor %}{% endfor %}{% endif %}
+        <a ref="{{ each.link }}" id="download-button" class="btn-large waves-effect waves-light brown lighten-1">{{ each.title }}</a>
+        {% endunless %}{% endfor %}
         </div>
         <br><br>
 
       </div>
     </div>
-    <div class="parallax"><img src="/assets/images/piano2_gris.png" alt="Piano hand 2"></div>
+    <div class="parallax"><img src="/assets/images/piano-keyboard.jpg" alt="Piano hand 2"></div>
   </div>
 
 
@@ -59,7 +64,7 @@
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h2 class="center teal-text text-lighten-2"><i class="material-icons">flash_on</i></h2>
             <h5 class="center">Speeds up development</h5>
 
             <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
@@ -68,7 +73,7 @@
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+            <h2 class="center teal-text"><i class="material-icons">group</i></h2>
             <h5 class="center">User Experience Focused</h5>
 
             <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
@@ -77,7 +82,7 @@
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h2 class="center teal-text"><i class="material-icons">settings</i></h2>
             <h5 class="center">Easy to work with</h5>
 
             <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
@@ -93,11 +98,11 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light">{% if lang == "fr" %}L'ami de votre piano{% else %}Your piano's friend{% endif%}</h5>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="/assets/images/piano2_gris.png" alt="Piano hand 2"></div>
+    <div class="parallax"><img src="/assets/images/me_piano_contrast.png" alt="Piano hand 2"></div>
   </div>
 
   <div class="container">
@@ -115,7 +120,60 @@
   </div>
 
 
- {% include footer.html %}
+
+    <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">{% if lang == "fr" %}Passion pour la musique{% else %}A passion for music{% endif %}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="/assets/images/heintzman.jpg" alt="Heintzman piano"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">{% if lang == "fr" %}À propos{% else %}About me{% endif %}</h5>
+          <p class="grey-text text-lighten-4">{% if lang == "fr" %}Mon amour pour le piano a commencé à l'âge de 17 ans. Ma formation comme prof de piano a commencé à la Sorbonne et à la Verhoog School of Music à Chicago, un laboratoire d'apprentissage musical. J'ai complété un apprentissage dans l'accord et la réparation des pianos auprès de Joseph Kahn en 2006. Je travaille en musique à plusieurs titres depuis maintenant 15 ans.{% else %}I started learning piano at the age of 17. Since then, I have been trained in piano teaching, especially for students with learning and physical difficulties, at the Verhoog School of Music in Chicago, a kind of learning laboratory. I completed an apprenticeship in piano tuning with Joseph Kahn. I’ve been working with pianos in many capacities for 15 years.{% endif %}</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">{% if page.lang == "fr" %}Mes services{% else %}My services{% endif %}</h5>
+          <ul>
+       {% if page.lang == "fr" %}{% assign doclist = site.data.navigation.fr %}{% else %}{% assign doclist = site.data.navigation.en %}{% endif %}
+       {% for each in doclist %}
+       {% unless each.title == "English" or each.title == "Français" %}
+        <li><a class="white-text" href="{{ each.link }}">{{ each.title }}</a></li>
+	{% endunless %}
+        {% endfor %}
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+		  <form action="https://formspree.io/xaybodwa" method="POST" target="_blank">
+      <li><input class="w3-input" type="text" style="width:100%" placeholder="{% if page.lang == "fr" %}Nom{% else %}Name{% endif %}" required name="{% if page.lang == "fr" %}Nom{% else %}Name{% endif %}"></li>
+      <li><input class="w3-input" type="text" style="width:100%" placeholder="{% if page.lang == "fr" %}Courriel{% else %}Email{% endif %}" required name="{% if page.lang == "fr" %}Courriel{% else %}Email{% endif %}"></li>
+      <li><input class="w3-input" type="text" style="width:100%" placeholder="{% if page.lang == "fr" %}Objet{% else %}Subject{% endif %}" required name="{% if page.lang == "fr" %}Objet{% else %}Subject{% endif %}"></li>
+      <li><input class="w3-input" type="text" style="width:100%" placeholder="Message" required name="Message"></li>
+      <li><button class="w3-button w3-black" type="submit">
+          <i class="fa fa-paper-plane"></i> &nbsp;{% if page.lang == "fr" %}Envoyer{% else %}SEND MESSAGE{% endif %}
+	      </button></li>
+    </form>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by SummerhaySites
+      </div>
+    </div>
+  </footer>
 
 
   <!--  Scripts-->

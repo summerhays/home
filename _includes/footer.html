@@ -2,11 +2,11 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">{% if lang == "fr" %}Passion pour la musique{% else %}Passion for music{% endif %}</h5>
+          <h5 class="header col s12 light">{% if lang == "fr" %}Passion pour la musique{% else %}A passion for music{% endif %}</h5>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
+    <div class="parallax"><img src="/assets/images/heintzman.jpg" alt="Heintzman piano"></div>
   </div>
 
   <footer class="page-footer teal">
@@ -21,18 +21,24 @@
         <div class="col l3 s12">
           <h5 class="white-text">{% if page.lang == "fr" %}Mes services{% else %}My services{% endif %}</h5>
           <ul>
-       {% if page.lang == "fr" %}{% for each in data.navigation.fr %}{% else %}{% for each in data.navigation.en %}
+       {% if page.lang == "fr" %}{% assign doclist = site.data.navigation.fr %}{% else %}{% assign doclist = site.data.navigation.en %}{% endif %}
+       {% for each in doclist %}
         <li><a class="white-text" href="{{ each.link }}">{{ each.title }}</a></li>
-        {% endfor %}{% endfor %}{% endif %}
+        {% endfor %}
           </ul>
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Connect</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+		  <form action="https://formspree.io/xaybodwa" method="POST" target="_blank">
+      <li><input class="w3-input w3-border" type="text" style="width:100%" placeholder="{% if page.lang == "fr" %}Nom{% else %}Name{% endif %}" required name="{% if page.lang == "fr" %}Nom{% else %}Name{% endif %}"></li>
+      <li><input class="w3-input w3-border" type="text" style="width:100%" placeholder="{% if page.lang == "fr" %}Courriel{% else %}Email{% endif %}" required name="{% if page.lang == "fr" %}Courriel{% else %}Email{% endif %}"></li>
+      <li><input class="w3-input w3-border" type="text" style="width:100%" placeholder="{% if page.lang == "fr" %}Objet{% else %}Subject{% endif %}" required name="{% if page.lang == "fr" %}Objet{% else %}Subject{% endif %}"></li>
+      <li><input class="w3-input w3-border" type="text" style="width:100%" placeholder="Message" required name="Message"></li>
+      <li><button class="w3-button color-1-dark" type="submit">
+          <i class="fa fa-paper-plane"></i> &nbsp;{% if page.lang == "fr" %}Envoyer{% else %}SEND MESSAGE{% endif %}
+	      </button></li>
+    </form>
           </ul>
         </div>
       </div>
