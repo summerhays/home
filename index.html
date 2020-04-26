@@ -53,10 +53,10 @@
       </div>
     </div>
     <div class="parallax"><img src="/assets/images/piano2_gris.png" alt="Piano hand 2"></div>
-    <a class=teal-text {% for each in site.data.navigation.lang %}
+    {% for each in site.data.navigation.lang %}
        <a href="{{ each.link }}">{{ each.title }}</a>
-      {% if each.title == "Français" %} {% for every in site.data.navigation.fr %} href="{{ every.link }}">{{ every.title }}</a> {% endfor %}{% endif %}
-      {% if each.title == "English" %} {% for every in site.data.navigation.en %} href="{{ every.link }}">{{ every.title }}</a> {% endfor %}{% endif %}
+      {% if each.title == "Français" %} {% for every in site.data.navigation.fr %} <a class=teal-text href="{{ every.link }}">{{ every.title }}</a> {% endfor %}{% endif %}
+      {% if each.title == "English" %} {% for every in site.data.navigation.en %} <a class=teal-text href="{{ every.link }}">{{ every.title }}</a> {% endfor %}{% endif %}
       {% endfor %}
   </div>
   </body>
