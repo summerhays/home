@@ -1,7 +1,7 @@
 en:
-- title: Piano lessons for busy adults
+- title: Lessons for busy adults
   link: https://piano.summerhays.net/index.html
-- title: Piano tuning and repair
+- title: Tuning and repair
   link: https://accord.summerhays.net/index-en.html
 - title: Français
   link: /index-fr.html
@@ -12,5 +12,11 @@ fr:
   link: https://piano.summerhays.net/index-fr.html
 - title: L'accord et la réparation des pianos
   link: https://accord.summerhays.net/index.html
+- title: English
+  link: /index-en.html
+
+lang:
+- title: Français
+  link: /index-fr.html
 - title: English
   link: /index-en.html
