@@ -6,6 +6,7 @@
   <!--  <link rel="stylesheet" href="/assets/css/index_style.css"> -->
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="description" content="{{ site.title}}">
   <meta name="keywords" content="{{ site.keywords}}">
@@ -13,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-
+	  <main>
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
             <a id="logo-container" href="#" class="brand-logo"><img src="/assets/images/keywave-S.png" style="width:100%;max-width:22px">ummerhays Piano <!--<img src="/assets/images/logo250.png" style="width:100%;max-width:58px">--></a>
@@ -37,28 +38,46 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center teal-text text-lighten-2">Summerhays Piano</h1>
+	<!-- <h1 class="header center teal-text text-lighten-2">Summerhays Piano</h1> -->
         <div class="row center">
                 <!-- <h5 class="header col s12 brown-text light">{% if lang == "fr" %}L'enseignement et l'accord du piano{% else %}Piano teaching and tuning{% endif%}</h5> -->
                 <h5 class="header col s12 brown-text light"> </h5>
                 <h5 class="header col s12 brown-text light"> </h5>
-        </div>
-        <div class="row center">
-        {% for each in site.data.navigation.lang %}
-        <a href="{{ each.link }}" id="download-button" class="btn-large waves-effect waves-light brown lighten-1">{{ each.title }}</a>
-        {% endfor %}
         </div>
         <br><br>
 
       </div>
     </div>
     <div class="parallax"><img src="/assets/images/piano2_gris.png" alt="Piano hand 2"></div>
-    {% for each in site.data.navigation.lang %}
-       <a href="{{ each.link }}">{{ each.title }}</a>
-      {% if each.title == "Français" %} {% for every in site.data.navigation.fr %} <a class=teal-text href="{{ every.link }}">{{ every.title }}</a> {% endfor %}{% endif %}
-      {% if each.title == "English" %} {% for every in site.data.navigation.en %} <a class=teal-text href="{{ every.link }}">{{ every.title }}</a> {% endfor %}{% endif %}
-      {% endfor %}
   </div>
-  </body>
-<footer>
+        <div class="center-link">
+        {% for each in site.data.navigation.lang %}
+        <a href="{{ each.link }}" id="download-button" class="btn-large waves-effect waves-light brown lighten-1">{{ each.title }}</a>
+        {% endfor %}
+        </div>
+	  </main>
+
+	<footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l9 s12">
+          <h5 class="white-text">Liens</h5>
+	  <ul>
+		  {% for every in site.data.navigation.fr %}{% unless every.title == "English" %}<li><a class=white-text href="{{ every.link }}">{{ every.title }}</a></li> {% endunless %}{% endfor %}
+	  </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+		  {% for every in site.data.navigation.en %}{% unless every.title == "Français" %}<li><a class=white-text href="{{ every.link }}">{{ every.title }}</a></li>{% endunless %}{% endfor %}
+        <li><a class="white-text" href="{{ each.link }}">{{ each.title }}</a></li>
+          </ul>
+        </div>
 </footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
