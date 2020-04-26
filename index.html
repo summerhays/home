@@ -53,7 +53,11 @@
       </div>
     </div>
     <div class="parallax"><img src="/assets/images/piano2_gris.png" alt="Piano hand 2"></div>
-    <p class=teal-text>{{ site.data.navigation }}</p>
+    <a class=teal-text {% for each in site.data.navigation.lang %}
+       <a href="{{ each.link }}">{{ each.title }}</a>
+      {% if each.title == "Français" %} {% for every in site.data.navigation.fr %} href="{{ every.link }}">{{ every.title }}</a> {% endfor %}{% endif %}
+      {% if each.title == "English" %} {% for every in site.data.navigation.en %} href="{{ every.link }}">{{ every.title }}</a> {% endfor %}{% endif %}
+      {% endfor %}
   </div>
   </body>
 <footer>
