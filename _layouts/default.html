@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{% if page.lang == "fr" %}fr{% else %}en{% endif%}">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -20,7 +20,7 @@
 <body>
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-	    <a id="logo-container" href="#" class="brand-logo"><img src="/assets/images/keywave-S.png" style="width:100%;max-width:22px">ummerhays Piano <!--<img src="/assets/images/logo250.png" style="width:100%;max-width:58px">--></a>
+	    <a id="logo-container" href="#" class="brand-logo">&nbsp; <img src="/assets/images/keywave-S.png" style="width:100%;max-width:20px">ummerhays Piano <!--<img src="/assets/images/logo250.png" style="width:100%;max-width:58px">--></a>
       <ul class="right hide-on-med-and-down">
 	      {% if page.lang == "fr" %}{% assign doclist = site.data.navigation.fr %}{% else %}{% assign doclist = site.data.navigation.en %}{% endif %}
 	{% for each in doclist %}
@@ -43,7 +43,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center teal-text text-lighten-2">{% if lang == "fr" %}Piano Summerhays{% else %}Summerhays Piano{% endif%}</h1>
+	<!--  <h1 class="header center teal-text text-lighten-2">{% if lang == "fr" %}Piano Summerhays{% else %}Summerhays Piano{% endif%}</h1> -->
         <div class="row center">
 		<!-- <h5 class="header col s12 brown-text light">{% if lang == "fr" %}L'enseignement et l'accord du piano{% else %}Piano teaching and tuning{% endif%}</h5> -->
 		<h5 class="header col s12 brown-text light"> </h5>
@@ -88,8 +88,8 @@
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center teal-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">{% if page.lang == "fr" %}Un partenaire dans votre réussite{% else %}Easy to work with{% endif %}</h5>
+            <h2 class="center teal-text"><i class="fa fa-cog w3-margin-bottom w3-spin"></i></h2>
+            <h5 class="center">{% if page.lang == "fr" %}Un partenaire dans votre réussite{% else %}A partner in your success{% endif %}</h5>
 
             <p class="light"></p>
           </div>
@@ -104,7 +104,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h3 class="header col s12 teal-text light">{% if lang == "fr" %}L'ami de votre piano{% else %}Your piano's friend{% endif%}</h3>
+          <h3 class="header col s12 teal-text light">{% if page.lang == "fr" %}L'ami de votre piano{% else %}Your piano's friend{% endif%}</h3>
         </div>
       </div>
     </div>
@@ -117,8 +117,8 @@
       <div class="row">
         <div class="col s12 center">
           <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+	  <h4>{% if page.lang == "fr" %}Nous joindre{% else %}Contact Us{% endif%}</h4>
+	  <p class="left-align light">{{ content }}</p>
         </div>
       </div>
 
@@ -131,7 +131,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h2 class="header col s12 teal-text light">{% if lang == "fr" %}Passion pour la musique{% else %}A passion for music{% endif %}</h5>
+          <h2 class="header col s12 teal-text light">{% if page.lang == "fr" %}La passion pour la musique{% else %}A passion for music{% endif %}</h5>
         </div>
       </div>
     </div>
@@ -142,14 +142,15 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">{% if lang == "fr" %}À propos{% else %}About me{% endif %}</h5>
-          <p class="grey-text text-lighten-4">{% if lang == "fr" %}Mon amour pour le piano a commencé à l'âge de 17 ans. Ma formation comme prof de piano a commencé à la Sorbonne et à la Verhoog School of Music à Chicago, un laboratoire d'apprentissage musical. J'ai complété un apprentissage dans l'accord et la réparation des pianos auprès de Joseph Kahn en 2006. Je travaille en musique à plusieurs titres depuis maintenant 15 ans.{% else %}I started learning piano at the age of 17. Since then, I have been trained in piano teaching, especially for students with learning and physical difficulties, at the Verhoog School of Music in Chicago, a kind of learning laboratory. I completed an apprenticeship in piano tuning with Joseph Kahn. I’ve been working with pianos in many capacities for 15 years.{% endif %}</p>
+          <h5 class="white-text">{% if page.lang == "fr" %}À propos{% else %}About me{% endif %}</h5>
+          <p class="grey-text text-lighten-4">{% if page.lang == "fr" %}Mon amour pour le piano a commencé à l'âge de 17 ans. Ma formation comme prof de piano a commencé à la Sorbonne et à la Verhoog School of Music à Chicago, un laboratoire d'apprentissage musical. J'ai complété un apprentissage dans l'accord et la réparation des pianos auprès de Joseph Kahn en 2006. Je travaille en musique à plusieurs titres depuis maintenant 15 ans.{% else %}I started learning piano at the age of 17. Since then, I have been trained in piano teaching, especially for students with learning and physical difficulties, at the Verhoog School of Music in Chicago, a kind of learning laboratory. I completed an apprenticeship in piano tuning with Joseph Kahn. I’ve been working with pianos in many capacities for 15 years.{% endif %}</p>
 
 
         </div>
         <div class="col l3 s12">
           <h5 class="teal-text">{% if page.lang == "fr" %}Mes services{% else %}My services{% endif %}</h5>
           <ul>
+		  <h3>{% if page.lang == "fr" %}Liens{% else %}Links{% endif%}</h3>
        {% if page.lang == "fr" %}{% assign doclist = site.data.navigation.fr %}{% else %}{% assign doclist = site.data.navigation.en %}{% endif %}
        {% for each in doclist %}
        {% unless each.title == "English" or each.title == "Français" %}
@@ -159,7 +160,7 @@
           </ul>
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
+		<h5 class="white-text">{% if page.lang == "fr" %}Contact{% else %}Connect{% endif%}</h5>
           <ul>
 		  <form action="https://formspree.io/xaybodwa" method="POST" target="_blank">
       <li><input class="w3-input" type="text" style="width:100%" placeholder="{% if page.lang == "fr" %}Nom{% else %}Name{% endif %}" required name="{% if page.lang == "fr" %}Nom{% else %}Name{% endif %}"></li>
@@ -176,7 +177,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by SummerhaySites
+        {% if page.lang == "fr" %}Fait par SiteSummerhays{% else %}Made by SummerhaySites{% endif %}
       </div>
     </div>
   </footer>

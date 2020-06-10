@@ -4305,6 +4305,7 @@ nav i.material-icons {
 nav .nav-wrapper {
   position: relative;
   height: 100%;
+  white-space: nowrap;
 }
 
 @media only screen and (min-width: 993px) {
@@ -4318,7 +4319,7 @@ nav .sidenav-trigger {
   position: relative;
   z-index: 1;
   height: 56px;
-  margin: 0 18px;
+  margin: 0 0px;
 }
 
 nav .sidenav-trigger i {
@@ -7678,7 +7679,7 @@ input[type=range]::-ms-thumb {
 
 .drag-target {
   height: 100%;
-  width: 10px;
+  width: 1px;
   position: fixed;
   top: 0;
   z-index: 998;
