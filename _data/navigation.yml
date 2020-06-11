@@ -20,3 +20,9 @@ lang:
   link: /index-fr.html
 - title: English
   link: /index-en.html
+
+welcome:
+- title: Bienvenue
+  link: /index-fr.html
+- title: Welcome
+  link: /index-en.html
