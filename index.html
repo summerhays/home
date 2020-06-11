@@ -18,19 +18,6 @@
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
             <a id="logo-container" href="#" class="brand-logo"><img src="/assets/images/keywave-S.png" style="width:100%;max-width:20px">ummerhays Piano <!--<img src="/assets/images/logo250.png" style="width:100%;max-width:58px">--></a>
-      <ul class="right hide-on-med-and-down">
-       <!-- {% for each in site.data.navigation.lang %}
-        <li><a href="{{ each.link }}">{{ each.title }}</a></li>
-        {% endfor %} -->
-          </ul>
-      </ul>
-
-      <ul id="nav-mobile" class="sidenav">
-        <!-- {% for each in site.data.navigation.lang %}
-        <li><a href="{{ each.link }}">{{ each.title }}</a></li>
-        {% endfor %} -->
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 
@@ -56,24 +43,10 @@
         <a href="{{ each.link }}" id="download-button" class="btn-large waves-effect waves-light brown lighten-1">{{ each.title }}</a>
         {% endfor %}
         </div>
-	  </main>
+	<div>&nbsp;</div>
+  </main>
 
-	<footer class="page-footer teal">
-    <div class="container">
-      <div class="row">
-        <div class="col l9 s12">
-          <h5 class="white-text">Liens</h5>
-	  <ul>
-		  {% for every in site.data.navigation.fr %}{% unless every.title == "English" %}<li><a class=white-text href="{{ every.link }}">{{ every.title }}</a></li> {% endunless %}{% endfor %}
-	  </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Links</h5>
-          <ul>
-		  {% for every in site.data.navigation.en %}{% unless every.title == "Français" %}<li><a class=white-text href="{{ every.link }}">{{ every.title }}</a></li>{% endunless %}{% endfor %}
-        <li><a class="white-text" href="{{ each.link }}">{{ each.title }}</a></li>
-          </ul>
-        </div>
+<footer class="page-footer teal">
 </footer>
 
   <!--  Scripts-->
