@@ -1,5 +1,5 @@
 ---
-redirect: https://meet.google.com/bde-vknf-qqm
+redirect: https://meet.google.com/qkw-uras-utj
 layout:     redirect
 permalink: /meet.html
 ---
